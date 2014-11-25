@@ -1,0 +1,37 @@
+<div class='container'>
+
+  <h2><%= @party.name %></h2>
+  <p>Begins on <%= @party.start %></p>
+  <p><%= @party.description %></p>
+
+  <h3>Join The Party?</h3>
+  <form role="form" class='participate-form'>
+    <div class="form-group">
+      <label for="participantName">Full Name</label>
+      <input type="text" class="form-control participantName" id="participantName" placeholder="Full Name">
+    </div>
+    <div class="form-group">
+      <label for="participantEmail">Email</label>
+      <input type="email" class="form-control participantEmail" id="participantEmail" placeholder="Email">
+    </div>
+    <button type="submit" class="btn btn-primary participate">Join</button>
+  </form>
+
+  <div class='success-message'>Welcome to the party!</div>
+  <div class='failure-message'>Something went wrong!</div>
+
+  <h3>Secret Santa Participants</h3>
+  <table class="participants-table table table-striped">
+    <tr class='header'>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <% @participants.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.email %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
