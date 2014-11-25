@@ -21,7 +21,7 @@ class Party < ActiveRecord::Base
 
   def poop
     self.shuffled_party.each do |message|
-      PartyMailer.gift_email message
+      PartyMailer.gift_email(message).deliver
     end
   end
 end
