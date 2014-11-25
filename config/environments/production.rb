@@ -72,6 +72,22 @@ Santa::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+
+
+
+
+  config.action_mailer.default_url_options = { host: '' }
+  config.action_mailer.asset_host = ''
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "localhost",
+    :port => 25,
+    :domain => "",
+    :enable_starttls_auto => false
+  }
+
+
+
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
